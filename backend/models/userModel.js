@@ -1,13 +1,12 @@
-let mongoose = require('mongoose');
-
-mongoose.connect('mongodb://127.0.0.1:27017/codeIDE');
+// userModel.js
+const mongoose = require('./db'); // Import the mongoose instance from db.js
 
 let userSchema = new mongoose.Schema({
   name: String,
   username: String,
   email: String,
   password: String,
-  date:{
+  date: {
     type: Date,
     default: Date.now
   },

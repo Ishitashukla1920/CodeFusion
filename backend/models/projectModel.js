@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
-
-mongoose.connect('mongodb://127.0.0.1:27017/codeIDE');
+// projectModel.js
+const mongoose = require('./db'); // Import the mongoose instance from db.js
 
 const projectSchema = new mongoose.Schema({
   title: String,
@@ -11,8 +10,7 @@ const projectSchema = new mongoose.Schema({
   },
   htmlCode: {
     type: String,
-    default: `
-    <!DOCTYPE html>
+    default: `<!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -27,8 +25,7 @@ const projectSchema = new mongoose.Schema({
   },
   cssCode: {
     type: String,
-    default: `
-    body{
+    default: `body{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
